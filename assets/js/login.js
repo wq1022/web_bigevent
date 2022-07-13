@@ -55,7 +55,7 @@ $(function () {
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
-                    return layer.msg('登录失败');
+                    return layer.msg('用户名或密码错误');
                 } else {
                     // 将登录成功得到的token字符串，保存到localStorage中
                     localStorage.setItem('token', res.token);
