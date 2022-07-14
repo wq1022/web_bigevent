@@ -8,7 +8,6 @@ $(function () {
             localStorage.removeItem('token');
             // 跳转到登录注册页面
             location.href = './login.html';
-
             layer.close(index);
 
         });
@@ -28,7 +27,9 @@ function getInfoMessage() {
                 return layer.msg('获取用户信息失败！');
             } else {
                 // 渲染用户头像
+
                 renderAvater(res.data);
+
             }
         },
         // 不论成功还是失败,都会调用complete函数
@@ -51,7 +52,7 @@ function renderAvater(user) {
     // 判断用户是否有头像
     if (user.user_pic) {
         // 渲染用户的头像
-        $('.layui-nav-img').attr('url', user_pic).show();
+        $('.layui-nav-img').attr('url', user.user_pic).show();
         $('.user-avater').hide();
     } else {
         // 渲染默认的头像
